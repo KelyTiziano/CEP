@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <br><br>
+    <img style="margin-left:20px;" height="80" width="600"
+        src="https://comlurbdev.rio.rj.gov.br/Extranet/framework2.0/images/logo_comlurb.png" />
+    <br><br>
+    <h3 style="margin-left:20px;">PREENCHIMENTO DE DADOS:</h3><br>
+    <!--<div class="container"> -->
+        <div class="row justify-content-start">
+            <div class="col-md-4" style="padding-left: 40px;">
+                <!-- Removendo a margem esquerda -->
+                <span style="margin-left:1px; margin-top:40px;"> Nome:</span>
+                <input type="text" class="form-control" style="margin:10px 20px 10px 0;" placeholder="Digite o nome completo"
+                    maxlength="100" id="nome">
+            </div>
+            <div class="col-md-1" style="padding-left: 10px;">
+                <span style="margin-left:0; margin-top:40px;"> CPF:</span>
+                <input type="text" class="form-control" style="margin:10px 20px 10px 0;" placeholder="Digite o CPF" maxlength="14"
+                    id="CPF" oninput="formatarCPF(this)">
+            </div>
+            <div class="col-md-1" style="padding-left: 10px;">
+                <span style="margin-left:0; margin-top:40px;"> RG:</span>
+                <input type="text" class="form-control" style="margin:10px 20px 10px 0;" placeholder="Digite o RG" maxlength="10"
+                    id="RG" oninput="formatarRG(this)">
+            </div>
+            
+    <div class="col-md-1" style="padding-left: 40px;">
+        <span style="margin-left:0; margin-top:40px;"> Sexo:</span>
+        <div class="form-check" style="margin-top: 10px;">
+            <input class="form-check-input" type="radio" name="sexo" value="feminino" id="feminino">
+            <label class="form-check-label" for="feminino">Feminino</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sexo" value="masculino" id="masculino">
+            <label class="form-check-label" for="masculino">Masculino</label>
+        </div>
+    </div>
+
+            
+    <div class="col-md-1" style="padding-left: 10px;">
+    <span style="margin-left:0; margin-top:40px;">CEP</span>
+    <div class="input-group">
+        <input type="text" class="form-control" style="width: 120px; margin:10px 0 10px 0;" placeholder="Digite o CEP" maxlength="8" id="CEP" oninput="formatarCEP(this)" onblur="buscarEnderecoPorCEP(this.value)">
+        <div class="col-md-1" style="padding-left: 10px; margin-top=30px">
+            <button class="btn btn-outline-secondary" style= "margin-top:10px; background-color: #DCDCDC;" type="button" onclick="buscarCEP()">
+                <i class="fas fa-search"></i> <!-- Ícone de busca -->
+            </button>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<div class="row justify-content-start">
+    <div class="col-md-4" style="padding-left: 30px; margin:30px 0;">
+        <!-- Removendo a margem esquerda -->
+        <span style="margin-left:0; margin-top:40px;"> Endereço:</span>
+        <input type="text" class="form-control" style="margin:10px 25px 10px 0;" placeholder="lugradouro"
+            maxlength="100" id="endereco">
+    </div>
+    <div class="col-md-1" style="padding-left: 0px; position: relative; top: 30px;">
+        <span> Número:</span>
+        <input type="text" class="form-control" style="margin:10px 20px 10px 0;" placeholder="número" maxlength="10"
+            id="numero">
+    </div>
+    <div class="col-md-1" style="padding-left: 0px; position: relative; top: 30px;">
+        <span> Complemento:</span>
+        <input type="text" class="form-control" style="margin:10px 20px 10px 0;" placeholder="complemento" maxlength="50"
+            id="complemento">
+    </div>
+    <div class="col-md-1" style="padding-left: 0px; position: relative; top: 30px;">
+        <span> Bairro:</span>
+        <input type="text" class="form-control" style="margin:10px 20px 10px 0;" placeholder="Bairro" maxlength="20"
+            id="bairro">
+    </div>
+    <div class="col-md-1" style="padding-left: 0px; position: relative; top: 30px;">
+        <span> Cidade:</span>
+        <input type="text" class="form-control" style="margin:10px 20px 10px 0;" placeholder="Cidade" maxlength="50"
+            id="cidade">
+    </div>
+    <div class="col-md-1" style="padding-left: 0px; position: relative; top: 30px;">
+        <span> Estado:</span>
+        <input type="text" class="form-control" style="margin:10px 20px 10px 0; width: 50px;" placeholder="UF" maxlength="2"
+            id="estado">
+    </div>
+</div>
+<div class="row justify-content-start">
+    <div class="col-md-1" style="padding-left: 30px; margin:0px 0;">
+        <!-- Removendo a margem esquerda -->
+        <span style="margin-left:0; margin-top:30px;"> Matrícula:</span>
+        <input type="text" class="form-control" style="margin:10px 25px 10px 0;" placeholder="matrícula" maxlength="6" id="matricula" oninput="formatarMatricula(this)">
+    </div>
+    <div class="col-md-1" style="padding-left: 10px;">
+        <button class="btn btn-outline-secondary" style="margin-top: 33px; background-color: #DCDCDC; margin-left: -15px;" type="button" onclick="buscarMatricula()">
+            <i class="fas fa-search"></i> <!-- Ícone de busca -->
+        </button>
+    </div>
+    <div class="col-md-3" style="padding-left: 0px; margin-left:-90px; ">
+        <span> Setor:</span>
+        <select class="form-control" style="margin:10px 20px 10px 0; width: 50px;" maxlength="4"
+            id="setor">
+            <option>   </option>
+            <option>CGT</option>
+            <option>GGP</option>
+            <option>GSU</option>
+            <option>DCO</option>
+            
+        </select>
+    </div>
+</div>
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    
+    <script>
+        function formatarMatricula(campo) {
+            var matricula = campo.value.replace(/\D/g, '');
+        campo.value = matricula;
+        }
+        </script>
+
+    <script>
+        function formatarCPF(campo) {
+            var cpf = campo.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+            if (cpf.length > 3) {
+                cpf = cpf.substring(0, 3) + '.' + cpf.substring(3); //adiciona o ponto na posiçao determinada
+            }
+            if (cpf.length > 7) {
+                cpf = cpf.substring(0, 7) + '.' + cpf.substring(7);
+            }
+            if (cpf.length > 11) {
+                cpf = cpf.substring(0, 11) + '-' + cpf.substring(11);
+            }
+            campo.value = cpf;
+        }
+    </script>
+<script>
+    function buscarEnderecoPorCEP(cep) {
+        // Limpa os campos de endereço
+        document.getElementById('endereco').value = '';
+        document.getElementById('bairro').value = '';
+        document.getElementById('cidade').value = '';
+        document.getElementById('estado').value = '';
+       
+
+
+        // Verifica se o CEP tem um formato válido
+        if (cep.length !== 8 || isNaN(cep)) {
+            alert('CEP inválido. Por favor, digite um CEP válido.');
+            return;
+        }
+
+        // Faz uma requisição GET para a API ViaCEP
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                // Preenche os campos de endereço com os dados obtidos da API
+                document.getElementById('endereco').value = data.logradouro;
+                document.getElementById('bairro').value = data.bairro;
+                document.getElementById('cidade').value = data.localidade;
+                document.getElementById('estado').value = data.uf;
+                
+            })
+            .catch(error => console.error('Ocorreu um erro ao buscar o endereço:', error));
+    }
+</script>
+
+    <script>
+        function formatarRG(campo) {
+            var rg = campo.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+            if (rg.length > 8) {
+                rg = rg.substring(0, 8) + '-' + rg.substring(8); //adiciona o digito na posição determinada
+            }
+            campo.value = rg;
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+<?PHP
+        $nome = "KELY";
+        $sobrenome = "TIZIANO";
+
+        echo "Meu" . " " . "nome" . " " . "é" . " " . $nome . " " . $sobrenome . "<br>";
+
+        print "kely <br>";
+
+        if ($nome === KELY && $nome == KELY) {
+            echo "ela é a menina" . " " . $nome . " " . "<br>";
+        } else {
+            echo "Nome incorreto";
+        }
+        ?>
+        </div></h1> 
