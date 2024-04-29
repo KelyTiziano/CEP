@@ -14,8 +14,7 @@
 
 <body>
     <br><br>
-    <img style="margin-left:20px;" height="80" width="600"
-        src="https://comlurbdev.rio.rj.gov.br/Extranet/framework2.0/images/logo_comlurb.png" />
+ 
     <br><br>
     <h3 style="margin-left:20px;">PREENCHIMENTO DE DADOS:</h3><br>
     <!--<div class="container"> -->
@@ -194,17 +193,35 @@
 
 
 <?PHP
-        $nome = "KELY";
-        $sobrenome = "TIZIANO";
+        // $nome = "KELY";
+        // $sobrenome = "TIZIANO";
 
-        echo "Meu" . " " . "nome" . " " . "é" . " " . $nome . " " . $sobrenome . "<br>";
+        // echo "Meu" . " " . "nome" . " " . "é" . " " . $nome . " " . $sobrenome . "<br>";
 
-        print "kely <br>";
+        // print "kely <br>";
 
-        if ($nome === KELY && $nome == KELY) {
-            echo "ela é a menina" . " " . $nome . " " . "<br>";
-        } else {
-            echo "Nome incorreto";
-        }
+        // if ($nome === KELY && $nome == KELY) {
+        //     echo "ela é a menina" . " " . $nome . " " . "<br>";
+        // } else {
+        //     echo "Nome incorreto";
+        // }
         ?>
         </div></h1> 
+
+
+                 <!-- <div class="col-md-1" style="padding-left: 10px;" id="sexo">
+            Sexo: <br><input type="text" placeholder="first name" id="nome"><br><br>
+            <input type="radio" name="sexo" value="feminino" /> Feminino<br>
+            <input type="radio" name="sexo" value="masculino" /> Masculino<br><br>
+            <button id="enviarNome">Enviar</button>
+        </div> -->
+
+            <!-- <script>
+        function formatarCEP(campo) {
+            var cep = campo.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+            if (cep.length > 5) {
+                cep = cep.substring(0, 5) + '-' + cep.substring(5);
+            }
+            campo.value = cep;
+        }
+    </script> -->
